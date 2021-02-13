@@ -1,0 +1,37 @@
+[
+  {
+    "flightId": 0,
+    "flightNumber": 6535,
+    "departureAirportIATACode": "YYT",
+    "arrivalAirportIATACode": "PPX",
+    "departureDate": "2016-01-26T05:27:04 -01:00"
+  },
+  {
+    "flightId": 1,
+    "flightNumber": 6265,
+    "departureAirportIATACode": "SEA",
+    "arrivalAirportIATACode": "LEW",
+    "departureDate": "2020-02-25T05:57:34 -01:00"
+  },
+  {
+    "flightId": 2,
+    "flightNumber": 7953,
+    "departureAirportIATACode": "SEA",
+    "arrivalAirportIATACode": "KRK",
+    "departureDate": "2020-09-08T10:34:50 -02:00"
+  },
+  {
+    "flightId": 3,
+    "flightNumber": 5686,
+    "departureAirportIATACode": "LAX",
+    "arrivalAirportIATACode": "MIT",
+    "departureDate": "2018-11-11T07:03:30 -01:00"
+  },
+  {
+    "flightId": 4,
+    "flightNumber": 6181,
+    "departureAirportIATACode": "LAX",
+    "arrivalAirportIATACode": "GDN",
+    "departureDate": "2015-04-05T02:47:53 -02:00"
+  }
+]
