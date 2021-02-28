@@ -12,6 +12,6 @@ public class AirportStats {
     private int departures;
     private int arrivals;
     private int arrivingBaggages;
-    private int departuringBaggages;
+    private int departingBaggages;
 
 }

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -46,6 +47,11 @@ public class FlightRepositoryImpl implements FlightRepository {
         return Optional.of(getFlightsFromFile().stream()
                 .filter(flight -> (flight.getArrivalAirportIATACode().equals(code) || flight.getDepartureAirportIATACode().equals(code)) && flight.getDepartureDate().toString().contains(date))
                 .collect(Collectors.toList())).orElse(new ArrayList<>());
+    }
+
+    @Override
+    public Flight.IATACode[] getIATACodes() {
+        return Flight.IATACode.values();
     }
 
     private List<Flight> getFlightsFromFile() {

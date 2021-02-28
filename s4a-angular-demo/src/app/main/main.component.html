@@ -1,0 +1,91 @@
+<h1>Airport Control</h1>
+<h2>Check Weight</h2>
+<div fxLayout="row" fxLayoutGap="15px">
+  <form [formGroup]="weightForm" (ngSubmit)="onSubmit()">
+    <div fxLayout="row" fxLayoutGap="30px">
+      <div>
+        <h2>Pick a flight number: </h2>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          formControlName="flightNumber">
+          <mat-radio-button class="example-radio-button" *ngFor="let flightNumber of flightNumbers" [value]="flightNumber">
+            {{flightNumber}}
+          </mat-radio-button>
+          <mat-error *ngIf="weightForm.controls['flightNumber'].hasError('required')">FlightNumber required</mat-error>
+        </mat-radio-group>
+      </div>
+      <div>
+        <h2>Pick a date:</h2>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          formControlName="departureDate">
+          <mat-radio-button class="example-radio-button" *ngFor="let date of departureDates" [value]="date">
+            {{date}}
+          </mat-radio-button>
+          <mat-error *ngIf="weightForm.controls['departureDate'].hasError('required')">Date required</mat-error>
+        </mat-radio-group>
+      </div>
+
+    </div>
+    <button id="submit-btn" mat-button type="submit">Submit</button>
+
+  </form>
+  <div *ngIf="hasError">
+    <p>Couldn't find a flight with given flight number on a given date.</p>
+
+  </div>
+  <div *ngIf="weight">
+    <h2>Weight for flight number {{weightForm.value.flightNumber}}</h2>
+    <p>Cargo Weight: {{weight.cargoWeight}} KG</p>
+    <p>Baggage Weight: {{weight.baggageWeight}} KG</p>
+    <p>Total Weight: {{weight.totalWeight}} KG</p>
+  </div>
+</div>
+<h2>Check Airport Stats</h2>
+<div fxLayout="row" fxLayoutGap="15px">
+  <form [formGroup]="airportStatsForm" (ngSubmit)="onSubmitAirportStats()">
+    <div fxLayout="row" fxLayoutGap="30px">
+      <div>
+        <h2>Pick an Airport Code: </h2>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          formControlName="iataCode">
+          <mat-radio-button class="example-radio-button" *ngFor="let iataCode of iataCodes" [value]="iataCode">
+            {{iataCode}}
+          </mat-radio-button>
+          <mat-error *ngIf="airportStatsForm.controls['iataCode'].hasError('required')">FlightNumber required</mat-error>
+        </mat-radio-group>
+      </div>
+      <div>
+        <h2>Pick a date:</h2>
+        <mat-radio-group
+          aria-labelledby="example-radio-group-label"
+          class="example-radio-group"
+          formControlName="date">
+          <mat-radio-button class="example-radio-button" *ngFor="let date of departureDates" [value]="date">
+            {{date}}
+          </mat-radio-button>
+          <mat-error *ngIf="airportStatsForm.controls['date'].hasError('required')">Date required</mat-error>
+        </mat-radio-group>
+      </div>
+
+    </div>
+    <button mat-button type="submit">Submit</button>
+
+  </form>
+  <div *ngIf="airportStatsError">
+    <p>Couldn't find a flight with given flight number on a given date.</p>
+
+  </div>
+  <div *ngIf="airportStats">
+    <h2>Stats for Airport {{airportStatsForm.value.iataCode}}</h2>
+    <p>Arrivals: {{airportStats.arrivals}}</p>
+    <p>Departures: {{airportStats.departures}}</p>
+    <p>Arriving pieces: {{airportStats.arrivingBaggages}} KG</p>
+    <p>Departing pieces: {{airportStats.departingBaggages}} KG</p>
+  </div>
+</div>
+
