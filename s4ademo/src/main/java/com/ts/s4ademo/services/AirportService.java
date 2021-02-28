@@ -6,6 +6,4 @@ import com.ts.s4ademo.entities.Flight;
 public interface AirportService {
 
     AirportStats getStatsFor(Flight.IATACode code, String date);
-
-    Flight.IATACode[] getIATACodes();
 }

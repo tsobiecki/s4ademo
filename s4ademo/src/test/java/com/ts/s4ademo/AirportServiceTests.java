@@ -40,7 +40,7 @@ public class AirportServiceTests {
                 .arrivals(2)
                 .departures(2)
                 .arrivingBaggages(1221)
-                .departingBaggages(1776)
+                .departuringBaggages(1776)
                 .build();
 
         when(flightRepository.getFlightsFor(code, date)).thenReturn(Arrays.asList(

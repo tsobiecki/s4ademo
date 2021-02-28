@@ -43,13 +43,8 @@ public class AirportServiceImpl implements AirportService {
                 .arrivals(arrivals.get())
                 .departures(departures.get())
                 .arrivingBaggages(arrivingBaggages.get())
-                .departingBaggages(departuringBaggages.get())
+                .departuringBaggages(departuringBaggages.get())
                 .build();
-    }
-
-    @Override
-    public Flight.IATACode[] getIATACodes() {
-        return flightRepository.getIATACodes();
     }
 
     private int getTotalPiecesFor(Long flightId) {

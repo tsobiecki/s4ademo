@@ -14,6 +14,4 @@ public interface FlightRepository {
     Optional<Long> findFlightIdBy(Integer flightNumber, String date);
 
     List<Flight> getFlightsFor(Flight.IATACode code, String date);
-
-    Flight.IATACode[] getIATACodes();
 }
